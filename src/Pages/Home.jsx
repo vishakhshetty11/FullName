@@ -24,24 +24,25 @@ function Home() {
   }
   return (
     <div>
+      <h2>Full Name Display</h2>
       <form onSubmit={handleClick}>
         <div style={{ marginBottom: "10px" }}>
           <label>First Name: </label>
-          <input type='text' name="firstName" onChange={handlChange} value={data.firstName} required />
+          <input type='text' name="firstName" onChange={handlChange} value={data.firstName} />
         </div>
         <div style={{ marginBottom: "10px" }}>
           <label>Last Name: </label>
-          <input type='text' name="lastName" onChange={handlChange} value={data.lastName} required />
+          <input type='text' name="lastName" onChange={handlChange} value={data.lastName} />
         </div>
         <div style={{ marginBottom: "10px" }}>
           <button>Submit</button>
         </div>
-        {fullname !== "" &&
-          <div>
-            <label>Full Name: </label>
-            <span>{fullname}</span>
-          </div>}
       </form>
+      {fullname !== "" &&
+        <div>
+          <label>Full Name: </label>
+          <span>{fullname}</span>
+        </div>}
     </div>
   )
 }
