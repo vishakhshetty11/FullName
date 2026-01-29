@@ -21,11 +21,11 @@ function Home() {
       <form onSubmit={handleClick}>
         <div style={{marginBottom:"10px"}}>
           <label>First Name: </label>
-          <input type='text' name="firstName" onChange={handlChange} value={data.firstName} />
+          <input type='text' name="firstName" onChange={handlChange} value={data.firstName} required />
         </div>
         <div style={{marginBottom:"10px"}}>
           <label>Last Name: </label>
-          <input type='text' name="lastName" onChange={handlChange} value={data.lastName} />
+          <input type='text' name="lastName" onChange={handlChange} value={data.lastName} required />
         </div>
         <div style={{marginBottom:"10px"}}>
           <button>Submit</button>
