@@ -14,20 +14,26 @@ function Home() {
   }
   const handleClick = (e) => {
     e.preventDefault();
-    setFullName(data.firstName + " " + data.lastName);
+    if (data.firstName.trim() !== "" && data.lastName.trim() !== "") {
+      setFullName(data.firstName.trim() + " " + data.lastName.trim());
     }
+    else {
+      setFullName("");
+    }
+
+  }
   return (
     <div>
       <form onSubmit={handleClick}>
-        <div style={{marginBottom:"10px"}}>
+        <div style={{ marginBottom: "10px" }}>
           <label>First Name: </label>
           <input type='text' name="firstName" onChange={handlChange} value={data.firstName} required />
         </div>
-        <div style={{marginBottom:"10px"}}>
+        <div style={{ marginBottom: "10px" }}>
           <label>Last Name: </label>
           <input type='text' name="lastName" onChange={handlChange} value={data.lastName} required />
         </div>
-        <div style={{marginBottom:"10px"}}>
+        <div style={{ marginBottom: "10px" }}>
           <button>Submit</button>
         </div>
         {fullname !== "" &&
